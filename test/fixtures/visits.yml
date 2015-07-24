@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  rg: 
+  cpf: 
+  departament_id: 
+  user_id: 
+  entrada: 2015-07-24 14:33:09
+  saida: 2015-07-24 14:33:09
+  empresa_id: 
+
+two:
+  name: MyString
+  rg: 
+  cpf: 
+  departament_id: 
+  user_id: 
+  entrada: 2015-07-24 14:33:09
+  saida: 2015-07-24 14:33:09
+  empresa_id: 
