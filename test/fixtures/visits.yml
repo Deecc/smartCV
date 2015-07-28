@@ -2,20 +2,20 @@
 
 one:
   name: MyString
-  rg: 
-  cpf: 
-  departament_id: 
+  rg: 1
+  cpf: 1
+  department_id: 
   user_id: 
-  entrada: 2015-07-24 14:33:09
-  saida: 2015-07-24 14:33:09
+  entrada: 2015-07-27 14:58:50
+  saida: 2015-07-27 14:58:50
   empresa_id: 
 
 two:
   name: MyString
-  rg: 
-  cpf: 
-  departament_id: 
+  rg: 1
+  cpf: 1
+  department_id: 
   user_id: 
-  entrada: 2015-07-24 14:33:09
-  saida: 2015-07-24 14:33:09
+  entrada: 2015-07-27 14:58:50
+  saida: 2015-07-27 14:58:50
   empresa_id: 
