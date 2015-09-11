@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<div class="table-responsive">
 <p>
   <strong>Name:</strong>
   <%= @visit.name %>
@@ -37,8 +38,9 @@
 
 <p>
   <strong>Empresa:</strong>
-  <%= @visit.empresa %>
+  <%= @visit.company %>
 </p>
+</div>
 
-<%= link_to 'Edit', edit_visit_path(@visit) %> |
-<%= link_to 'Back', visits_path %>
+<%= link_to 'Editar', edit_visit_path(@visit) %> |
+<%= link_to 'Voltar', visits_path %>

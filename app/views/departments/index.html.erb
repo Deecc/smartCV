@@ -1,12 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Departments</h1>
+<h3>Departamentos</h3>
 
-<table>
+
+<div class="table-responsive">
+<table class="table">
   <thead>
     <tr>
       <th>Nome</th>
-      <th>Descricao</th>
+      <th>Descrição</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,14 +18,14 @@
       <tr>
         <td><%= department.nome %></td>
         <td><%= department.descricao %></td>
-        <td><%= link_to 'Show', department %></td>
-        <td><%= link_to 'Edit', edit_department_path(department) %></td>
-        <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '', department, class: 'glyphicon glyphicon-search aria-hidden="true"' %></td>
+        <td><%= link_to '', edit_department_path(department), class: 'glyphicon glyphicon-pencil aria-hidden="true" ' %></td>
+        <td><%= link_to '', department, method: :delete, data: { confirm: 'Tem certeza?' } , class: 'glyphicon glyphicon-remove aria-hidden="true"'%></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
-<%= link_to 'New Department', new_department_path %>
+<%= link_to 'Criar novo departamento', new_department_path %>

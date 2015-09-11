@@ -1,11 +1,14 @@
 class VisitsController < ApplicationController
   before_action :set_visit, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  
   
   # GET /visits
   # GET /visits.json
   def index
     @visits = Visit.all
+    @departments = Department.all
+    @users = User.all
+    @companies = Company.all
   end
 
   # GET /visits/1
@@ -70,6 +73,6 @@ class VisitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def visit_params
-      params.require(:visit).permit(:name, :rg, :cpf, :department_id, :user_id, :entrada, :saida, :empresa_id)
+      params.require(:visit).permit(:name, :rg, :cpf, :department_id, :user_id, :entrada, :saida, :company_id)
     end
 end

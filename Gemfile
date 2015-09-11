@@ -32,6 +32,21 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+#Devise - Autenticação de usuário.
+#  gem 'devise'
+
+  #Angular templates
+  gem 'angular-rails-templates'
+
+
+  #Bootstrap
+  gem 'bootstrap-sass', '~> 3.3.1'
+  gem 'autoprefixer-rails'
+
+  #Reports
+  gem 'thinreports', '~> 0.8.1'
+  gem 'thinreports-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -42,16 +57,11 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  #Devise - Autenticação de usuário.
-  gem 'devise'
+  
 
-  #Angular templates
-  gem 'angular-rails-templates'
-
-  gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-  #Bootstrap
-  #gem 'bootstrap-sass', '~> 3.2.0'
-  #gem 'autoprefixer-rails'
+ 
+  #gem "twitter-bootstrap-rails"
+  #gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails',:git => 'git://github.com/Nerian/bootstrap-datepicker-rails.git'
 
 end
 

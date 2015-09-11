@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<div class="table-responsive">
 <p>
   <strong>Nome:</strong>
   <%= @department.nome %>
 </p>
 
 <p>
-  <strong>Descricao:</strong>
+  <strong>Descrição:</strong>
   <%= @department.descricao %>
 </p>
 
-<%= link_to 'Edit', edit_department_path(@department) %> |
-<%= link_to 'Back', departments_path %>
+</div>
+
+<%= link_to 'Editar', edit_department_path(@department) %> |
+<%= link_to 'Voltar', departments_path %>

@@ -1,17 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Visits</h1>
+<h3>Lista de visitantes</h3>
+<div class="table-responsive">
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nome</th>
       <th>Rg</th>
       <th>Cpf</th>
-      <th>Department</th>
-      <th>User</th>
+      <th>Departmento</th>
+      <th>Funcionario</th>
       <th>Entrada</th>
-      <th>Saida</th>
+      <th>Saída</th>
       <th>Empresa</th>
       <th colspan="3"></th>
     </tr>
@@ -23,19 +24,21 @@
         <td><%= visit.name %></td>
         <td><%= visit.rg %></td>
         <td><%= visit.cpf %></td>
-        <td><%= visit.department %></td>
-        <td><%= visit.user %></td>
-        <td><%= visit.entrada %></td>
-        <td><%= visit.saida %></td>
-        <td><%= visit.empresa %></td>
-        <td><%= link_to 'Show', visit %></td>
-        <td><%= link_to 'Edit', edit_visit_path(visit) %></td>
-        <td><%= link_to 'Destroy', visit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= visit.department.nome %></td>
+        <td><%= visit.user.name %></td>
+        <td><%= visit.entrada.strftime("%d/%m/%Y - %H:%M") %></td>
+        <td><%= visit.saida.strftime("%d/%m/%Y - %H:%M") %></td>
+        <td><%= visit.company.nome %></td>
+        <td><%= link_to '', visit, class: 'glyphicon glyphicon-search aria-hidden="true"' %></td>
+        <td><%= link_to '', edit_visit_path(visit), class: 'glyphicon glyphicon-pencil aria-hidden="true" ' %></td>
+        <td><%= link_to '', visit, method: :delete, data: { confirm: 'tem certeza que gostaria de apagar esta visita?' }, class: 'glyphicon glyphicon-remove aria-hidden="true"' %></td>
       </tr>
+
+      
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Visit', new_visit_path %>
+</div>
+<%= link_to 'Cadastrar visita', new_visit_path %>

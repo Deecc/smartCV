@@ -1,12 +1,16 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  
   
   # GET /reports
   # GET /reports.json
   def index
     @reports = Report.all
+    @visits = Visit.mesAtual(Date.today)
+    
   end
+
+  
 
   # GET /reports/1
   # GET /reports/1.json
@@ -71,5 +75,21 @@ class ReportsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def report_params
       params.require(:report).permit(:empresa_id, :user_id, :visit_id, :department_id)
+    end
+
+    def render_reportVisits(visits)
+      report = ThinReports::Report.new layout: File.join(Rails.root, 'app', 'reports', 'relatorioVisitas.tlf')
+
+      visits.each do |visit|
+        report.list.add_row do |row|
+          row.values nomeVisita: visit.nomeVisit, 
+                     cpfVisita: visit.cpfVisit
+          row.item(:nomeVisita).style(:color, 'red') unless task.done?
+        end
+      end
+
+      send_data report.generate, filename: 'relatorioVisitas.pdf', 
+                                 type: 'application/pdf', 
+                                 disposition: 'attachment'
     end
 end

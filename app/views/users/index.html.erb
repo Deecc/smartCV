@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Lista de funcionários cadastrados</h3>
+
+<div class="table-responvive">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rg</th>
+      <th>Cpf</th>
+      <th>Matrícula</th>
+      <th>Departamento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.rg %></td>
+        <td><%= user.cpf %></td>
+        <td><%= user.matricula %></td>
+        <td><%= user.department.nome %></td>
+        <td><%= link_to '', user, class: 'glyphicon glyphicon-search aria-hidden="true"' %></td>
+        <td><%= link_to '', edit_user_path(user),class: 'glyphicon glyphicon-pencil aria-hidden="true" ' %></td>
+        <td><%= link_to '', user, method: :delete, data: { confirm: 'Tem certeza?' },class: 'glyphicon glyphicon-remove aria-hidden="true"' %></td>
+      </tr>
+
+      
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'Cadastrar novo funcionário', new_user_path %>

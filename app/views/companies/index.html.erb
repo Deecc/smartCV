@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Lista de empresas</h3>
+
+<div class="table-responsive">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Telefone</th>
+      <th>Cnpj</th>
+      <th>Endereco</th>
+      <th>Numero</th>
+      <th>Complemento</th>
+      <th>Cep</th>
+      <th>Bairro</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @companies.each do |company| %>
+      <tr>
+        <td><%= company.nome %></td>
+        <td><%= company.telefone %></td>
+        <td><%= company.cnpj %></td>
+        <td><%= company.endereco %></td>
+        <td><%= company.numero %></td>
+        <td><%= company.complemento %></td>
+        <td><%= company.cep %></td>
+        <td><%= company.bairro %></td>
+        <td><%= company.cidade %></td>
+        <td><%= company.estado %></td>
+        <td><%= link_to '', company, class: 'glyphicon glyphicon-search aria-hidden="true"' %></td>
+        <td><%= link_to '', edit_company_path(company),class: 'glyphicon glyphicon-pencil aria-hidden="true" ' %></td>
+        <td><%= link_to '', company, method: :delete, data: { confirm: 'Tem certeza que gostaria de exluir os dados da empresa?' },class: 'glyphicon glyphicon-remove aria-hidden="true"' %></td>
+
+
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'Cadastrar nova empresa', new_company_path %>

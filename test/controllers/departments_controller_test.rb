@@ -17,7 +17,7 @@ class DepartmentsControllerTest < ActionController::TestCase
   end
 
   test "should create department" do
-    assert_difference('Department.count') do
+    assert_difference('department.count') do
       post :create, department: { descricao: @department.descricao, nome: @department.nome }
     end
 
@@ -40,7 +40,7 @@ class DepartmentsControllerTest < ActionController::TestCase
   end
 
   test "should destroy department" do
-    assert_difference('Department.count', -1) do
+    assert_difference('department.count', -1) do
       delete :destroy, id: @department
     end
 

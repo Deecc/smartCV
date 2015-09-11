@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<div class="table-responsive">
+
+<p>
+  <strong>Nome:</strong>
+  <%= @company.nome %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @company.telefone %>
+</p>
+
+<p>
+  <strong>Cnpj:</strong>
+  <%= @company.cnpj %>
+</p>
+
+<p>
+  <strong>Endereço:</strong>
+  <%= @company.endereco %>
+</p>
+
+<p>
+  <strong>Número:</strong>
+  <%= @company.numero %>
+</p>
+
+<p>
+  <strong>Complemento:</strong>
+  <%= @company.complemento %>
+</p>
+
+<p>
+  <strong>Cep:</strong>
+  <%= @company.cep %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= @company.bairro %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @company.cidade %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @company.estado %>
+</p>
+
+</div>
+
+<%= link_to 'Editar', edit_company_path(@company) %> |
+<%= link_to 'Voltar', companies_path %>

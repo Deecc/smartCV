@@ -11,39 +11,39 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :rg %><br>
-    <%= f.number_field :rg %>
-  </div>
-  <div class="field">
-    <%= f.label :cpf %><br>
-    <%= f.number_field :cpf %>
-  </div>
-  <div class="field">
-    <%= f.label :department_id %><br>
-    <%= f.text_field :department_id %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :entrada %><br>
-    <%= f.datetime_select :entrada %>
-  </div>
-  <div class="field">
-    <%= f.label :saida %><br>
-    <%= f.datetime_select :saida %>
-  </div>
-  <div class="field">
-    <%= f.label :empresa_id %><br>
-    <%= f.text_field :empresa_id %>
-  </div>
+  <div class="form-group">
+    <%= f.text_field :name, class: 'form-control input-lg', placeholder: 'Nome do visitante' %>
+    <br />
+    <div class="form-inline">
+      <%= f.text_field :rg, class: 'form-control input-lg', placeholder: 'Registro Geral' %>
+      <%= f.text_field :cpf, class: 'form-control input-lg', placeholder: 'CPF' %>
+    </div>
+    <br />
+    <div class="form-inline">
+    <%= f.collection_select(:department_id, Department.all,:id, :nome,{}, {class: 'form-control input-lg'}) %>
+    </div>
+     <br />
+    <div class="form-inline">
+    <%= f.collection_select(:user_id, User.all, :id, :name, {},{class: 'form-control input-lg', placeholder: 'Funcionário'}) %>
+    </div>
+    <br />
+    <div class="form-inline">
+      <%= f.label "Entrada", class: 'input-lg' %>
+      <%= f.datetime_select(:entrada, {:order => [:day,:month, :year]},{class: 'form-control input-lg glyphicon glyphicon-calendar aria-hidden="true"'}) %>
+    </div>
+    <br />
+    <div class="form-inline">
+      <%= f.label "Saida    ", class: 'control-label input-lg' %>
+      <%= f.datetime_select(:saida,{:order => [:day,:month, :year]}, class: 'form-control input-lg glyphicon glyphicon-calendar aria-hidden="true"', placeholder: 'Empresa') %>
+    </div>
+    <br />
+    <div class="form-inline">
+      <%= f.collection_select(:company_id, Company.all, :id, :nome, {},{class: 'form-control input-lg', placeholder: 'Empresa'}) %>
+    </div>
+   
+  
   <div class="actions">
-    <%= f.submit %>
+    <br />
+    <%= f.submit "Cadastrar visita", class: 'btn btn-primary'%>
   </div>
 <% end %>

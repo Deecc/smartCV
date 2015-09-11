@@ -1,0 +1,43 @@
+<%= form_for(@company) do |f| %>
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% @company.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="form-group">
+   <%= f.text_field :nome , class: 'form-control input-lg', placeholder: 'Empresa'%>
+    <br />  
+     <%= f.text_field :cnpj, class: 'form-control input-lg', placeholder: 'CNPJ' %>
+     <br />
+    <%= f.text_field :endereco, class: 'form-control input-lg', placeholder: 'Endereço' %>
+    <br />
+    <div class="form-inline">
+      
+      <%= f.text_field :numero, class: 'form-control input-lg', placeholder: 'Número' %>
+      <%= f.text_field :complemento, class: 'form-control input-lg', placeholder: 'Complemento' %>
+      <%= f.text_field :bairro, class: 'form-control input-lg', placeholder: 'Bairro' %>
+     </div>
+     <br />
+    <div class="form-inline">
+      <%= f.text_field :cep, class: 'form-control input-lg', placeholder: 'CEP' %>
+    </div>
+    <br />
+    <div class="form-inline">
+      <%= f.select(:estado, option_estados_for_select,{}, {class: 'form-control input-lg', placeholder: 'Estado'}) %>
+      <%= f.text_field :cidade, class: 'form-control input-lg', placeholder: 'Cidade' %>
+    </div>
+ 
+   
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "Cadastrar empresa" , class: 'btn btn-primary input-lg'%>
+  </div>
+   </div>
+<% end %>
