@@ -6,7 +6,14 @@ class ReportsController < ApplicationController
   # GET /reports.json
   def index
     @reports = Report.all
-    @visits = Visit.mesAtual(Date.today)
+    data = Date.today
+    @visits = Visit.mesAtual(data)
+    #@visits = Visit.mesAtual(Time.now.strftime("%d-%m-%Y"))
+    #@visits = Visit.all
+    respond_to do |format|
+      format.html
+      format.pdf { render_reportVisits(@visits) }
+    end
     
   end
 
@@ -78,13 +85,17 @@ class ReportsController < ApplicationController
     end
 
     def render_reportVisits(visits)
-      report = ThinReports::Report.new layout: File.join(Rails.root, 'app', 'reports', 'relatorioVisitas.tlf')
+      report = ThinReports::Report.new layout: File.join(Rails.root, 'app', 'views', 'reports' ,  'relatorioVisitas.tlf')
 
       visits.each do |visit|
         report.list.add_row do |row|
-          row.values nomeVisita: visit.nomeVisit, 
-                     cpfVisita: visit.cpfVisit
-          row.item(:nomeVisita).style(:color, 'red') unless task.done?
+          row.values nomeVisit: visit.name, 
+                     cpfVisit: visit.cpf,
+                     inicioVisit: visit.entrada,
+                     fimVisit: visit.saida,
+                     departamentoVisit: visit.department.nome,
+                     funcVisit: visit.user.name
+          #row.item(:nomeVisit).style(:color, 'red') unless visit.done?
         end
       end
 
