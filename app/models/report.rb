@@ -9,4 +9,5 @@ class Report < ActiveRecord::Base
   def state
     done? ? 'done' : 'yet'
   end
+  
 end
