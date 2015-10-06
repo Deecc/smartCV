@@ -1,33 +1,27 @@
 <div class="table-responsive"> 
 	<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Cpf</th>
-      <th>Departamento</th>
-      <th>Data entrada</th>
-      <th>Data saida</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @visits.each do |visit| %>
+    <thead>
       <tr>
-        <td><%= visit.name %></td>
-        <td><%= visit.cpf %></td>
-        <td><%= visit.department.nome %></td>
-        <td><%= visit.entrada %></td>
-        <td><%= visit.saida %></td>
+        <th>Name</th>
+        <th>Cpf</th>
+        <th>Departamento</th>
+        <th>Data entrada</th>
+        <th>Data saida</th>
+        <th colspan="3"></th>
       </tr>
-    
+    </thead>
 
-      
-    <% end %>
-
-    
-  </tbody>
-</table>
+    <tbody>
+      <% @visits.each do |visit| %>
+        <tr>
+          <td><%= visit.name %></td>
+          <td><%= visit.cpf %></td>
+          <td><%= visit.department.nome %></td>
+          <td><%= visit.entrada %></td>
+          <td><%= visit.saida %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
 
-</div>

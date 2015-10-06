@@ -12,12 +12,13 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.text_field :nome , class: 'form-control input-lg', placeholder: 'Nome do departamento'%>
+    <%= f.text_field :nome , class: 'form-control ', placeholder: 'Nome do departamento'%>
     <br />
-    <%= f.text_field :descricao, class: 'form-control input-lg', placeholder: 'Descrição do departamento' %> 
+    <%= f.text_field :descricao, class: 'form-control', placeholder: 'Descrição do departamento' %> 
     <br />
   </div>
   
-    <%= f.submit "Cadastrar departamento" ,class: 'btn btn-primary' %>
-  </div>
+  <%= f.submit "Cadastrar departamento" ,class: 'btn btn-primary' %>
+
 <% end %>
+<br />

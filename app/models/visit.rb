@@ -8,9 +8,9 @@ class Visit < ActiveRecord::Base
   def self.mesAtual(data)
   	@visits = []
   	@visits.each do |v|
-  		#if ((v.data.month < data.month) && (v.data.year == data.year))
-  			@visits << v
-  		#end
+  		if ((v.saida.month == data.month) && (v.saida.year == data.year))
+       	@visits << v
+  		end
   	end
   	@visits
   end

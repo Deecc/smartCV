@@ -11,25 +11,27 @@
     </div>
   <% end %>
 <div class="form-group">
-  <%= f.text_field :name , class: 'form-control input-lg', placeholder: 'Nome do funcionário'%>
+  <%= f.text_field :name , class: 'form-control', placeholder: 'Nome do funcionário'%>
   <br />  
   <div class="form-inline">
-    <%= f.text_field :rg , class: 'form-control input-lg', placeholder: 'Registro Geral' %>
-    <%= f.text_field :cpf, class: 'form-control input-lg', placeholder: 'CPF' %>
-    <%= f.text_field :matricula, class: 'form-control input-lg', placeholder: 'Matrícula' %>
+    <%= f.text_field :rg , class: 'form-control ', placeholder: 'Registro Geral' %>
+    <%= f.text_field :cpf, class: 'form-control ', placeholder: 'CPF' %>
+    <%= f.text_field :matricula, class: 'form-control', placeholder: 'Matrícula' %>
     
 
   </div>
   <br />
   <div class="form-inline">
-   <%= f.collection_select(:department_id, Department.all,:id, :nome,{}, {class: 'form-control input-lg'}) %>
+    <label>Selecione o departamento </label>
+   <%= f.collection_select(:department_id, Department.all,:id, :nome,{}, {class: 'form-control'}) %>
   </div>
 </div>
   <br />
  
 
   <div class="actions">
-    <%= f.submit "Cadastrar funcionário", class: 'btn btn-primary input-lg' %>
+    <%= f.submit "Cadastrar funcionário", class: 'btn btn-primary' %>
+    
   </div>
-
+<br />
 <% end %>

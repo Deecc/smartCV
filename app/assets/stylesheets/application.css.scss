@@ -27,8 +27,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body {
-  width: 1200px;
-  height: 720px;
-  margin: auto;
-}
+body { padding-top: 70px; }
+
+#footer { padding-top: 50px;}

@@ -7,7 +7,7 @@ class ReportsController < ApplicationController
   def index
     @reports = Report.all
     data = Date.today
-    @visits = Visit.mesAtual(data)
+    @visits = Visit.all
     #@visits = Visit.mesAtual(Time.now.strftime("%d-%m-%Y"))
     #@visits = Visit.all
     respond_to do |format|

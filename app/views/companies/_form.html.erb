@@ -11,33 +11,32 @@
     </div>
   <% end %>
 <div class="form-group">
-   <%= f.text_field :nome , class: 'form-control input-lg', placeholder: 'Empresa'%>
+   <%= f.text_field :nome , class: 'form-control ', placeholder: 'Empresa'%>
     <br />  
-     <%= f.text_field :cnpj, class: 'form-control input-lg', placeholder: 'CNPJ' %>
+     <%= f.text_field :cnpj, class: 'form-control ', placeholder: 'CNPJ' %>
      <br />
-    <%= f.text_field :endereco, class: 'form-control input-lg', placeholder: 'Endereço' %>
+    <%= f.text_field :endereco, class: 'form-control ', placeholder: 'Endereço' %>
     <br />
-    <div class="form-inline">
-      
-      <%= f.text_field :numero, class: 'form-control input-lg', placeholder: 'Número' %>
-      <%= f.text_field :complemento, class: 'form-control input-lg', placeholder: 'Complemento' %>
-      <%= f.text_field :bairro, class: 'form-control input-lg', placeholder: 'Bairro' %>
+    <div class="form-inline">      
+      <%= f.text_field :numero, class: 'form-control ', placeholder: 'Número' %>
+      <%= f.text_field :complemento, class: 'form-control ', placeholder: 'Complemento' %>
+      <%= f.text_field :bairro, class: 'form-control', placeholder: 'Bairro' %>
      </div>
      <br />
     <div class="form-inline">
-      <%= f.text_field :cep, class: 'form-control input-lg', placeholder: 'CEP' %>
+      <%= f.text_field :cep, class: 'form-control', placeholder: 'CEP' %>
     </div>
     <br />
     <div class="form-inline">
-      <%= f.select(:estado, option_estados_for_select,{}, {class: 'form-control input-lg', placeholder: 'Estado'}) %>
-      <%= f.text_field :cidade, class: 'form-control input-lg', placeholder: 'Cidade' %>
+      <%= f.select(:estado, option_estados_for_select,{}, {class: 'form-control ', placeholder: 'Estado'}) %>
+      <%= f.text_field :cidade, class: 'form-control ', placeholder: 'Cidade' %>
     </div>
  
    
   </div>
   
   <div class="actions">
-    <%= f.submit "Cadastrar empresa" , class: 'btn btn-primary input-lg'%>
+    <%= f.submit "Cadastrar empresa" , class: 'btn btn-primary'%>
   </div>
-   </div>
+</div>
 <% end %>

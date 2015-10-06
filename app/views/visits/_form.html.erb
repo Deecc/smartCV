@@ -12,33 +12,40 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.text_field :name, class: 'form-control input-lg', placeholder: 'Nome do visitante' %>
-    <br />
+    <%= f.text_field :name, class: 'form-control', placeholder: 'Nome do visitante' %>
     <div class="form-inline">
-      <%= f.text_field :rg, class: 'form-control input-lg', placeholder: 'Registro Geral' %>
-      <%= f.text_field :cpf, class: 'form-control input-lg', placeholder: 'CPF' %>
+      <div class="form-group">
+        <%= f.text_field :rg, class: 'form-control ', placeholder: 'Registro Geral' %>
+        <%= f.text_field :cpf, class: 'form-control ', placeholder: 'CPF' %>
+      </div>
     </div>
     <br />
     <div class="form-inline">
-    <%= f.collection_select(:department_id, Department.all,:id, :nome,{}, {class: 'form-control input-lg'}) %>
-    </div>
-     <br />
+      <div class="form-group">
+       <label> Selecione o departamento: </label>
+        <%= f.collection_select(:department_id, Department.all,:id, :nome,{}, {class: 'form-control'}) %>
+        </div>
+      </div>
+         <br />
     <div class="form-inline">
-    <%= f.collection_select(:user_id, User.all, :id, :name, {},{class: 'form-control input-lg', placeholder: 'Funcionário'}) %>
-    </div>
-    <br />
-    <div class="form-inline">
-      <%= f.label "Entrada", class: 'input-lg' %>
-      <%= f.datetime_select(:entrada, {:order => [:day,:month, :year]},{class: 'form-control input-lg glyphicon glyphicon-calendar aria-hidden="true"'}) %>
-    </div>
-    <br />
-    <div class="form-inline">
-      <%= f.label "Saida    ", class: 'control-label input-lg' %>
-      <%= f.datetime_select(:saida,{:order => [:day,:month, :year]}, class: 'form-control input-lg glyphicon glyphicon-calendar aria-hidden="true"', placeholder: 'Empresa') %>
+      <label> Selecione o servidor: </label>
+      <%= f.collection_select(:user_id, User.all, :id, :name, {},{class: 'form-control', placeholder: 'Funcionário'}) %>
     </div>
     <br />
     <div class="form-inline">
-      <%= f.collection_select(:company_id, Company.all, :id, :nome, {},{class: 'form-control input-lg', placeholder: 'Empresa'}) %>
+      <%= f.label "Entrada", class: 'control-label' %>
+      <br />
+      <%= f.datetime_select(:entrada, {:order => [:day,:month, :year]},{class: 'form-control glyphicon glyphicon-calendar aria-hidden="true"'}) %>
+    </div>
+    <div class="form-inline">
+      <%= f.label "Saida    ", class: 'control-label' %>
+      <br />
+      <%= f.datetime_select(:saida,{:order => [:day,:month, :year]}, class: 'form-control glyphicon glyphicon-calendar aria-hidden="true"', placeholder: 'Empresa') %>
+    </div>
+    <br />
+    <div class="form-inline">
+      <label>Selecione a empresa</label>
+      <%= f.collection_select(:company_id, Company.all, :id, :nome, {},{class: 'form-control', placeholder: 'Empresa'}) %>
     </div>
    
   
@@ -46,4 +53,5 @@
     <br />
     <%= f.submit "Cadastrar visita", class: 'btn btn-primary'%>
   </div>
+  <br />
 <% end %>
