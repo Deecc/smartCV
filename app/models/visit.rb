@@ -6,7 +6,9 @@ class Visit < ActiveRecord::Base
   attr_reader :data
 
   def self.mesAtual(data)
-  	@visits = []
+    date = Date.today
+
+    @visits = []
   	@visits.each do |v|
   		if ((v.saida.month == data.month) && (v.saida.year == data.year))
        	@visits << v

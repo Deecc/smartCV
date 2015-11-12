@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   root to: 'application#index'
 
+  #get '/visits/:filtro', to: 'reports#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   get 'visits/index' => 'visits#all'

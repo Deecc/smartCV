@@ -7,8 +7,7 @@ class ReportsController < ApplicationController
   def index
     @reports = Report.all
     data = Date.today
-    @visits = Visit.all
-    #@visits = Visit.mesAtual(Time.now.strftime("%d-%m-%Y"))
+    @visits = Visit.where("extract(month from saida)= ? and extract(year from saida) = ?",data.month, data.year)
     #@visits = Visit.all
     respond_to do |format|
       format.html

@@ -2,9 +2,9 @@
 
 <h3>Relatórios</h3>
 
-
+  <%= link_to "Mês atual", {controller: "reports", action: "index", filtro: "teste"} %>
   <ul class="nav nav-tabs" role="tablist">
-    <li id="mesAtual" class="active"><a href="#" data-toggle="tab">Mês atual</a></li>
+    <li id="mesAtual" class="active"><%= link_to "Mês atual", "/reports" %></a></li>
     <li id="porData"><a href="#" data-toggle="tab">Por Datas</a></li>
     <li id="porDepart"><a href="#" data-toggle="tab">Por Departamento</a></li>
     <li id="porFunc"><a href="#" data-toggle="tab">Por Funcionário</a></li>
